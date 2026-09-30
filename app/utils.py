@@ -7,10 +7,19 @@ import os
 @st.cache_data
 def load_data():
     """Load the PSA CSV and reshape from wide to long format."""
-    csv_path = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)),
-        "Major Crops- Volume of Production, by Region, Quarter, and Semester, 2010-2026.csv",
-    )
+    # Resolve path: works whether run from project root or from app/
+    base = os.path.dirname(os.path.abspath(__file__))
+    csv_name = "Major Crops- Volume of Production, by Region, Quarter, and Semester, 2010-2026.csv"
+
+    # Try data/original/ relative to project root first, then fall back
+    project_root = os.path.dirname(base)  # one level up from app/
+    candidates = [
+        os.path.join(project_root, "data", "original", csv_name),
+        os.path.join(base, csv_name),                         # legacy flat layout
+        os.path.join(base, "..", csv_name),                    # flat layout from app/
+    ]
+    csv_path = next((p for p in candidates if os.path.isfile(p)), candidates[0])
+
     raw = pd.read_csv(csv_path, header=1)
 
     # Keep only quarterly columns (skip Semester / Annual aggregates)

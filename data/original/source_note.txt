@@ -1,0 +1,29 @@
+Dataset: Major Crops — Volume of Production, by Region, Quarter, and Semester, 2010–2026
+
+Source:    Philippine Statistics Authority (PSA) — OpenSTAT
+URL:       https://openstat.psa.gov.ph/
+Format:    CSV (wide format, ~858 KB)
+License:   Philippine government open data (public domain)
+Retrieved: September 2026
+
+Description:
+  This dataset contains quarterly production volume data (in metric tons)
+  for 57 major Philippine crops across 17 administrative regions, covering
+  the period from 2010 to 2026.  Each row represents a (Crop, Region) pair,
+  and the columns contain production volumes for each Year × Quarter,
+  Semester, and Annual aggregate.
+
+Crops covered:
+  Abaca, Banana (6 varieties), Cacao, Calamansi, Camote, Cassava, Coconut,
+  Coffee (6 varieties), Eggplant, Mango (4 varieties), Mongo, Onion
+  (4 varieties), Pineapple, Potato, Rubber, Sugarcane (5 categories),
+  Tobacco (3 varieties), Tomato, Ampalaya, Cabbage.
+
+Regions covered:
+  CAR, Region I–XIII, MIMAROPA, NIR, BARMM.
+
+Notes:
+  - Values of ".." indicate missing or suppressed data.
+  - The "PHILIPPINES" row is the national aggregate (sum of all regions).
+  - Some crop sub-categories (e.g., Coffee Arabica) may have sparse data
+    in certain regions.
